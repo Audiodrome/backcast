@@ -18,10 +18,10 @@ var AppView = Backbone.View.extend({
     }).render();
     $('.list').append(videoList);
 
-    // var videoPlayer = new VideoPlayerView({
-    //   collection: this.videos[0]
-    // }).render();
-    // $('.list').append(videoPlayer);
+    var videoPlayer = new VideoPlayerView({
+      collection: this.videos[0]
+    }).render();
+    $('.player').append(videoPlayer);
     // this.$el.append(vlv);
     return this.$el;
   },

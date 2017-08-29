@@ -9,7 +9,6 @@ var VideoListEntryView = Backbone.View.extend({
   // },
 
   render: function() {
-    // console.log(this.model.attributes);
     let url = this.model.attributes.snippet.thumbnails.default.url;
     let channelTitle = this.model.attributes.snippet.channelTitle;
     let description = this.model.attributes.snippet.description;
