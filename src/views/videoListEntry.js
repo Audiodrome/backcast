@@ -1,16 +1,22 @@
 var VideoListEntryView = Backbone.View.extend({
 
   initialize: function() {
-    this.listenTo(this.collection, 'select', this.handleclick);
+    console.log(this.handleClick, 'click');
+    this.listenTo(this.model, 'select', this.handleClick);
+    // this.model.on('select', this.handleClick2, this);
   },
 
   events: {
-    'click .video-list-entry media': 'handleClick'
+    'click .video-list-entry-title' : 'handleClick2'
   },
 
   handleClick: function() {
     
     console.log('clicked');
+  },
+
+  handleClick2: function(selectedVid) {
+    this.model.select(selectedVid);
   },
 
   render: function() {

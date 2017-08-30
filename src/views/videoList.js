@@ -2,7 +2,8 @@ var VideoListView = Backbone.View.extend({
 
   initialize: function() {
     
-    this.collection.on('sync', this.render, this);
+    // this.collection.on('sync', this.render, this);
+    this.listenTo(this.collection, 'select', this.tempfunc);
     // this.render();
   },
 
@@ -14,6 +15,12 @@ var VideoListView = Backbone.View.extend({
     this.collection.forEach(this.renderVideo, this);
 
     return this.$el;
+  },
+
+  tempfunc: function(video) {
+    console.log('temp', video);
+ 
+    return video;
   },
 
   renderVideo: function(video) {
